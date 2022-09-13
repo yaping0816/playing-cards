@@ -1,0 +1,27 @@
+plugins {
+    id 'java'  //creates java object we can configure in line 5
+}
+
+java {
+    //toolchain is another object
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+group 'com.tlglearning'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies { //libraries
+    def junitVersion = '5.9.0'
+    testImplementation "org.junit.jupiter:junit-jupiter:${junitVersion}"  //this library is required for implementing test code
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"   //double quota can do concatenate, or using string formatting
+}
+
+test {
+    useJUnitPlatform()
+}
