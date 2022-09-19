@@ -3,7 +3,7 @@ package com.tlglearning.cards.model;
 public enum Suit {
 
   CLUBS('\u2663'), //becomes public static final Suit CLUBS = new Suit(), ''is for char literals, "" is for string literals
-  DIAMONDS('\u2662'), //use unicode here by \u, public static final Suit CLUBS = new Suit('\u2663)
+  DIAMONDS('\u2662'),
   HEARTS('\u2661'),
   SPADES('\u2660');
 
