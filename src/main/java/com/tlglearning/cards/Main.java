@@ -10,7 +10,18 @@ public class Main {
 
   public static void main(String[] args) {
     //create an instance of the anonymous class at the same statement, define the class and create instance at the same time
-    Comparator<Card> comparator = new Comparator<>() { //inside this {} is hte implemantation of the subclass we are creating
+
+    Deck deck = new Deck();
+    System.out.println(deck);
+    // TODO: 9/19/22 create an acceptable source of randomness
+    Random rng = new SecureRandom();
+    // TODO: 9/19/22 shuffle the deck, using the created source pf randomness
+    deck.shuffle(rng);
+    // TODO: 9/19/22 print the string representation of the deck after shuffling
+    System.out.println(deck);
+    deck.sort();
+    System.out.println(deck);
+    deck.sort(new Comparator<>() {
 
       @Override
       public int compare(Card card1, Card card2) {
@@ -24,19 +35,7 @@ public class Main {
         return comparison;
       }
 
-    };
-
-    Deck deck = new Deck();
-    System.out.println(deck);
-    // TODO: 9/19/22 create an acceptable source of randomness
-    Random rng = new SecureRandom();
-    // TODO: 9/19/22 shuffle the deck, using the created source pf randomness
-    deck.shuffle(rng);
-    // TODO: 9/19/22 print the string representation of the deck after shuffling
-    System.out.println(deck);
-    deck.sort();
-    System.out.println(deck);
-    deck.sort(comparator);
+    });
     System.out.println(deck);
   }
 
