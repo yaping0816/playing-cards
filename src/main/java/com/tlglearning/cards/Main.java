@@ -19,10 +19,10 @@ public class Main {
     System.out.println(deck);
     deck.sort();
     System.out.println(deck);
-    deck.sort(new ColorFirst());
+    deck.sort(new ColorFirst()); //pure inner class, staic method could only invoke other static method
     System.out.println(deck);
   }
-  private class ColorFirst implements Comparator<Card> {
+  private static class ColorFirst implements Comparator<Card> {
 
     @Override
     public int compare(Card card1, Card card2) {
