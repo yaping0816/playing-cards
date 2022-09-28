@@ -1,9 +1,8 @@
 package com.tlglearning.cards;
 
-import com.tlglearning.cards.model.Card;
+
 import com.tlglearning.cards.model.Deck;
 import java.security.SecureRandom;
-import java.util.Comparator;
 import java.util.Random;
 
 public class Main {
